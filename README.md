@@ -1,5 +1,7 @@
 # AI视频脚本提炼与生成器
 
+> **Version:** 1.1.0 | [SKILL.md](SKILL.md) | [Changelog](#)
+
 国际化电商视频管线 **Skill3** — 读取分镜脚本 JSON，AI 压缩至 2000 字以内，提取时长和产品参考图，构建视频生成请求 payload 并提交 aigc API。
 
 ## 管线定位
