@@ -1,7 +1,7 @@
 ---
 name: ecommerce-video-generator
 description: AI视频脚本提炼与视频生成器（国际化电商视频管线 Skill3）。读取分镜脚本JSON，AI压缩至2000字以内，提取时长和产品参考图，构建视频生成请求payload并提交aigc API。当用户已完成分镜脚本生成、需要渲染最终视频时触发。
-version: 1.0.0
+version: 1.1.0
 license: MIT
 compatibility: opencode
 metadata:
