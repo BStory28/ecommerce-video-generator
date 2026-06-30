@@ -112,4 +112,32 @@ python {baseDir}/scripts/generate_video.py \
   --script "{baseDir}/output/storyboard.json" \
   --product "{image_path}" \
   --submit
+
+---
+## 管线串联（重要 — AI 执行流程）
+
+本 Skill 是国际化电商视频生成管线的 **最终环节**。
+
+### 执行前检查
+
+本 Skill 依赖上游输出：
+- `storyboard.json` — Skill2 的分镜脚本（通过 `--script` 传入）
+- `product_layer.png` — Skill1 的产品白底图（通过 `--product` 传入）
+
+> **注意:** `usage_instructions` 字段仅在 Skill1→Skill2 间传递，Skill3 不涉及此字段。
+
+如果文件不存在，提示用户先执行 Skill1 和 Skill2。
+
+### 执行完成后
+
+1. **告知用户结果**：输出目录、生成文件列表、payload 摘要
+2. **告知用户视频生成状态**：预览模式（payload 已保存）或已提交（task_id）
+
+### 上下游说明
+
+| 方向 | 技能 | 仓库 |
+|------|------|------|
+| ⬆ 上游 | `ecommerce-product-info-generator` | `https://github.com/BStory28/ecommerce-product-info-generator` |
+| ⬆ 上游 | `ecommerce-video-script-generator` | `https://github.com/BStory28/ecommerce-video-script-generator` |
+| ⬇ 下游 | 无（本技能是最终环节） | — |
 ```
