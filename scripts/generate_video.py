@@ -38,6 +38,9 @@ def _format_video_markdown(product_name: str, output_dir: str, has_docx: bool = 
         "",
         "---",
         "✅ **视频数据已就绪**，预览模式可检查 payload，提交模式已发送 API 请求",
+        "",
+        "> 💡 **提示：** 以上生成的文件已保存到本地输出目录。",
+        "> 如果当前环境支持文件下载，请将输出目录中的文件输出到会话中供下载。",
     ])
     return "\n".join(lines)
 
@@ -399,6 +402,9 @@ def generate_video(
             print(f"  ✗ 提交失败")
     else:
         print(f"\n  (预览模式，未提交)")
+
+    print(f"\n💡 提示：以上生成的文件已保存到输出目录。")
+    print(f"   如果当前环境支持文件下载，请将文件输出到会话中供下载。")
 
     # Chat markdown output
     product_name = ""
